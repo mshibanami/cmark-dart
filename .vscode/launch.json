@@ -1,0 +1,17 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+        {
+            "name": "Example",
+            "program": "${workspaceRoot}/example/cmark_example.dart",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Unit Tests",
+            "program": "${workspaceRoot}/test/cmark_test.dart",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
