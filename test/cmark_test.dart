@@ -22,10 +22,9 @@ void main() {
     });
 
     test('markdownToHtml', () {
-      // expect(cMark.markdownToHtml(""), equals(""));
-      // expect(cMark.markdownToHtml("Hello"), equals("<p>Hello</p>\n"));
-      // expect(cMark.markdownToHtml("# Hello"), equals("<h1>Hello</h1>\n"));
-      // expect(cMark.markdownToHtml("こんにちは"), equals("<p>こんにちは</p>\n"));
+      expect(cMark.markdownToHtml("Hello"), equals("<p>Hello</p>\n"));
+      expect(cMark.markdownToHtml("# Hello"), equals("<h1>Hello</h1>\n"));
+      expect(cMark.markdownToHtml("こんにちは"), equals("<p>こんにちは</p>\n"));
     });
   });
 }
