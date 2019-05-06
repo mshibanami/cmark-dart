@@ -12,6 +12,12 @@
             "program": "${workspaceRoot}/test/cmark_test.dart",
             "request": "launch",
             "type": "dart"
+        },
+        {
+            "name": "Benchmark",
+            "program": "${workspaceRoot}/benchmark/benchmark.dart",
+            "request": "launch",
+            "type": "dart"
         }
     ]
 }
