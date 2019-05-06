@@ -13,7 +13,7 @@ class _CommonMarkBindings {
   CString Function(CString text, int len, int options) cmark_markdown_to_html;
 
   _CommonMarkBindings() {
-    commonMark = dlopenPlatformSpecific("cmark", path: "lib/libcmark/");
+    commonMark = dlopenPlatformSpecific("cmark", path: "cmark/build/src/");
     cmark_markdown_to_html = commonMark
         .lookup<NativeFunction<cmark_markdown_to_html_native_t>>(
             "cmark_markdown_to_html")
