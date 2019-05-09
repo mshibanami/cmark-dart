@@ -3,7 +3,7 @@ import 'package:markdown/markdown.dart';
 import 'package:cmark/src/cmark.dart';
 
 main(List<String> args) {
-  var sampleMarkdown = File("benchmark/sample.md").readAsStringSync();
+  var sampleMarkdown = File("sample.md").readAsStringSync();
   sleep(Duration(seconds: 1));
 
   measure(

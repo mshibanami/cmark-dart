@@ -1,4 +1,5 @@
 import 'dart:ffi';
+import 'dart:io';
 
 import '../ffi/cstring.dart';
 import '../ffi/dylib_utils.dart';
@@ -13,7 +14,7 @@ class _CommonMarkBindings {
   CString Function(CString text, int len, int options) cmark_markdown_to_html;
 
   _CommonMarkBindings() {
-    commonMark = dlopenPlatformSpecific("cmark", path: "cmark/build/src/");
+    commonMark = dlopenPlatformSpecific("cmark");
     cmark_markdown_to_html = commonMark
         .lookup<NativeFunction<cmark_markdown_to_html_native_t>>(
             "cmark_markdown_to_html")

@@ -17,7 +17,8 @@
             "name": "Benchmark",
             "program": "${workspaceRoot}/benchmark/benchmark.dart",
             "request": "launch",
-            "type": "dart"
-        }
+            "type": "dart",
+            "preLaunchTask": "benchmark_cmark_native run"
+        },
     ]
 }
