@@ -1,4 +1,5 @@
 #include <dlfcn.h>
+#include <math.h>
 #include <string.h>
 #include <chrono>
 #include <fstream>
@@ -31,7 +32,8 @@ int main(int argc, char const *argv[]) {
         markdown_to_html(sample_markdown, length, 0);
     }
     auto elapsed = high_resolution_clock::now() - start;
-    cout << "cmark (native): " << elapsed.count() << endl;
+    cout << "cmark (native): " << elapsed.count() / pow(10, 9) << " [seconds]"
+         << endl;
 
     return 0;
 }

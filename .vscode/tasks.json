@@ -2,7 +2,7 @@
     "tasks": [
         {
             "label": "benchmark_cmark_native run",
-            "command": "${workspaceFolder}/benchmark/benchmark.bash",
+            "command": "${workspaceFolder}/benchmark/benchmark.sh",
         }
     ],
     "version": "2.0.0"
