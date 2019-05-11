@@ -9,3 +9,10 @@ build/
 
 # Directory created by dartdoc
 doc/api/
+
+### https://raw.github.com/github/gitignore/79d46ba7e5dec413bff045f31e51d268b1145df7/Global/VisualStudioCode.gitignore
+
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
