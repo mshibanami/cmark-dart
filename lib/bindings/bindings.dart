@@ -6,21 +6,21 @@ import '../ffi/dylib_utils.dart';
 import 'signatures.dart';
 import 'types.dart';
 
-class _CommonMarkBindings {
-  DynamicLibrary commonMark;
+class _CMarkBindings {
+  DynamicLibrary library;
 
   CString Function(CMarkNodePointer root, int options) cmark_render_html;
 
   CString Function(CString text, int len, int options) cmark_markdown_to_html;
 
-  _CommonMarkBindings() {
-    commonMark = dlopenPlatformSpecific("cmark");
-    cmark_markdown_to_html = commonMark
+  _CMarkBindings() {
+    library = dlopenPlatformSpecific("cmark");
+    cmark_markdown_to_html = library
         .lookup<NativeFunction<cmark_markdown_to_html_native_t>>(
             "cmark_markdown_to_html")
         .asFunction();
   }
 }
 
-_CommonMarkBindings _cachedBindings;
-_CommonMarkBindings get bindings => _cachedBindings ??= _CommonMarkBindings();
+_CMarkBindings _cachedBindings;
+_CMarkBindings get bindings => _cachedBindings ??= _CMarkBindings();
