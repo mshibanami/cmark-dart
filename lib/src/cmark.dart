@@ -4,10 +4,12 @@ import 'cmark_options.dart';
 
 class CMark {
   String markdownToHtml(String text,
-      {List<int> options = const [CMarkOptions.DEFAULT],
+      {List<CMarkOptions> options = const [],
       List<int> extensions = const []}) {
-    var optionValue = options.fold(
-        CMarkOptions.DEFAULT, (previous, option) => previous | option);
+    var optionValues = options.map((option) => CMarkOptionHelper.value(option));
+    var optionValue = optionValues.fold(
+        CMarkOptionHelper.value(CMarkOptions.defaultValue),
+        (previous, option) => previous | option);
     var textC = CString.allocate(text);
     var renderedC =
         bindings.cmark_markdown_to_html(textC, text.length, optionValue);
