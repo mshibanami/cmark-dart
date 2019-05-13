@@ -1,7 +1,7 @@
-import 'package:cmark/bindings/types.dart';
+import 'package:cmark/src/bindings/types.dart';
 
-import '../bindings/bindings.dart';
-import '../ffi/cstring.dart';
+import 'bindings/bindings.dart';
+import 'ffi/cstring.dart';
 import 'cmark_option.dart';
 
 class CMark {
@@ -17,7 +17,8 @@ class CMark {
     return rendered;
   }
 
-  CMarkNode parse(String commonMarkText, {List<CMarkOption> options = const []}) {
+  CMarkNode parse(String commonMarkText,
+      {List<CMarkOption> options = const []}) {
     var optionsValue = CMarkOptionHelper.optionsToValue(options);
     var textC = CString.allocate(commonMarkText);
     var nodeC = bindings.cmark_parse_document(
