@@ -3,6 +3,10 @@
         {
             "label": "benchmark_cmark_native run",
             "command": "${workspaceFolder}/benchmark/benchmark.sh",
+        },
+        {
+            "label": "build clang sample",
+            "command": "${workspaceFolder}/clang_sample/build.sh",
         }
     ],
     "version": "2.0.0"

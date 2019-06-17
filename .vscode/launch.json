@@ -20,5 +20,17 @@
             "type": "dart",
             "preLaunchTask": "benchmark_cmark_native run"
         },
+        {
+            "name": "Clang Sample",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/clang_sample/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build clang sample"
     ]
 }
