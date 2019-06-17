@@ -9,11 +9,10 @@ class CMark {
       {List<CMarkOption> options = const [], List<int> extensions = const []}) {
     var optionsValue = CMarkOptionHelper.optionsToValue(options);
     var textC = CString.allocate(commonMarkText);
-    var renderedC = bindings.cmark_markdown_to_html(
+    var renderedC = bindings.markdownToHtml(
         textC, commonMarkText.length, optionsValue);
     var rendered = CString.fromUtf8(renderedC);
     textC.free();
-    renderedC.free();
     return rendered;
   }
 
@@ -21,7 +20,7 @@ class CMark {
       {List<CMarkOption> options = const []}) {
     var optionsValue = CMarkOptionHelper.optionsToValue(options);
     var textC = CString.allocate(commonMarkText);
-    var nodeC = bindings.cmark_parse_document(
+    var nodeC = bindings.parseDocument(
         textC, commonMarkText.length, optionsValue);
     textC.free();
     var node = nodeC.load<CMarkNode>();

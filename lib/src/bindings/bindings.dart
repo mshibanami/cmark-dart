@@ -8,20 +8,20 @@ import 'types.dart';
 class _CMarkBindings {
   DynamicLibrary library;
 
-  CString Function(CString text, int len, int options) cmark_markdown_to_html;
-  Pointer<CMarkNodePointer> Function(CString buffer, int len, int options)
-      cmark_parse_document;
+  CString Function(CString text, int len, int options) markdownToHtml;
+  Pointer<CMarkNode> Function(CString buffer, int len, int options)
+      parseDocument;
 
   _CMarkBindings() {
-    library = dlopenPlatformSpecific("cmark");
+    library = dlopenPlatformSpecific("cmark", path: "lib/src/cmark/build/src/");
 
-    cmark_markdown_to_html = library
-        .lookup<NativeFunction<cmark_markdown_to_html_native_t>>(
+    markdownToHtml = library
+        .lookup<NativeFunction<CmarkMarkdownToHtmlOp>>(
             "cmark_markdown_to_html")
         .asFunction();
 
-    cmark_parse_document = library
-        .lookup<NativeFunction<cmark_parse_document_native_t>>(
+    parseDocument = library
+        .lookup<NativeFunction<CmarkParseDocumentOp>>(
             "cmark_parse_document")
         .asFunction();
   }

@@ -1,4 +1,5 @@
 import 'package:cmark/cmark.dart';
+import 'package:cmark/src/ffi/cstring.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -16,7 +17,9 @@ void main() {
     });
 
     test("parse", () {
-      // var parsed = cMark.parse("# Hello");
+      var parsed = cMark.parse("# Hello");
+      expect(parsed.content.asize, 56);
+      expect(parsed.content.size, 0);
     });
   });
 }
